@@ -1,0 +1,190 @@
+.navbar {
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #000000;
+
+  position: fixed; /* 👈 siempre arriba */
+  top: 0;
+  left: 0;
+  z-index: 9999; /* 👈 queda encima de todo */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2; /* que el logo quede por encima del centro si se solapan */
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* 👈 centrado vertical */
+  transform: translate(-50%, -50%); /* 👈 ajusta vertical y horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.navbar-center .navbar-menu {
+  pointer-events: auto;
+}
+
+.navbar-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.navbar-title {
+  display: flex;
+  flex-direction: column; /* coloca Parfum debajo */
+  line-height: 18px; /* junta un poquito las dos líneas */
+}
+
+.title-main {
+  color: #d4af37; /* amarillo dorado */
+  font-size: 17px;
+}
+
+.title-sub {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 56px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  display: inline-block;
+  text-decoration: none;
+  color: #f4e4c1;
+  font-size: 16px;
+  font-weight: 400;
+  transition: transform 0.2s ease, color 0.2s ease; /* 👈 transición suave */
+  position: relative;
+}
+
+/* Línea animada al pasar el mouse */
+.navbar-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a.active {
+  color: #d4af37; /* mismo color dorado que la línea */
+  transform: scale(1.1); /* mismo efecto del hover */
+}
+
+/* ACTIVO: la línea queda fija */
+.navbar-menu a.active::after {
+  width: 100%;
+}
+
+.navbar-menu a:hover {
+  color: #d4af37;
+  transform: scale(1.1); /* 👈 agranda un poquito (10%) */
+}
+
+.navbar-right {
+  width: 111px; /* mismo tamaño que el logo para balancear */
+}
+
+.cart-icon {
+  font-size: 23px;
+  color: #f4e4c1;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart-icon:hover {
+  color: #d4af37; /* dorado */
+  transform: scale(1.15);
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #f4e4c1;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0 30px;
+
+  transition: height 0.3s ease;
+  z-index: 9998;
+}
+
+.mobile-menu.open {
+  height: 250px; /* 👈 Puedes ajustarlo */
+  padding-top: 30px;
+}
+
+.mobile-menu a {
+  color: #f4e4c1;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* 📱 Estilos para celular */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  /* 🔥 Forzamos a que el menú central desaparezca */
+  .navbar-center {
+    display: none !important;
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  /* 🔥 Mostramos la hamburguesa */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* 🔥 Acomodamos la parte derecha */
+  .navbar-right {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+}
