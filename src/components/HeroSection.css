@@ -1,0 +1,139 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("https://images.unsplash.com/photo-1610109790326-9a21dfe969b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhcmFiaWMlMjBwZXJmdW1lJTIwYm90dGxlfGVufDF8fHx8MTc2MzUwMDg4M3ww&ixlib=rb-4.1.0&q=80&w=1080");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 👉 Mueve el texto a la derecha */
+  padding-right: 37px;
+
+  position: relative; /* 👉 NECESARIO para el overlay */
+}
+
+/* 💡 CAPA OSCURA (ESTO OSCURECE LA IMAGEN) */
+/* 💡 CAPA OSCURA CON DEGRADADO DE DERECHA A IZQUIERDA */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.849) 40%,
+    /* 👉 lado derecho más oscuro */ rgba(0, 0, 0, 0.3) 104%,
+    /* 👉 parte intermedia */ rgba(0, 0, 0, 0.356) 100%
+      /* 👉 izquierda sin oscuridad */
+  );
+  z-index: 1;
+}
+
+/* 💡 EL TEXTO PARA QUE SE MUESTRE ENCIMA DEL OSCURECIDO */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: #fff;
+  margin-left: 153px;
+  max-width: 629px;
+}
+
+.hero-title {
+  font-size: 82px;
+  font-weight: 400;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  color: #f4e4c1;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  color: #cabc94;
+}
+
+.hero-btn {
+  background: linear-gradient(
+    to left,
+    #f1dfb6 0%,
+    /* dorado claro lado izquierdo */ #d7b447 100%,
+    /* dorado más fuerte al centro */ #8a6b23 100%
+      /* más oscuro al lado derecho */
+  );
+  color: black;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+
+/* HOVER CON MÁS BRILLO */
+.hero-btn:hover {
+  background: linear-gradient(
+    to left,
+    #f9d97c 0%,
+    /* más dorado claro */ #d4af37 50%,
+    /* dorado brillante */ #b68f2e 100% /* dorado fuerte */
+  );
+  transform: scale(1.05);
+}
+
+.hero-spam {
+  display: inline-block;
+  background: transparent;
+  color: #d4b447;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  border: 0.1px solid #4d3d25;
+  backdrop-filter: blur(3px);
+  position: relative;
+  z-index: 2;
+}
+
+/* 📱 RESPONSIVE */
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-left: 18%;
+    max-width: 90%;
+    text-align: center; /* 📌 centra el texto */
+    display: flex; /* 📌 truco para centrar */
+    flex-direction: column;
+    align-items: center; /* 📌 centra TODO horizontalmente */
+  }
+
+  .hero-title {
+    font-size: 41px;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .hero-btn {
+    margin: 0 auto;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,123 @@
+.featured-container {
+  padding: 72px 20px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to bottom, #000000, #0d0d0d);
+}
+
+.featured-title {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.featured-line {
+  width: 80px;
+  height: 3px;
+  background: #d4b447;
+  margin: 10px auto 40px auto;
+  border-radius: 4px;
+}
+
+/* Grid de tarjetas */
+.featured-grid {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.perfume-card {
+  width: 450px;                /* 🔥 Más ancho como en tu imagen */
+  background: #0c0c0c;
+  border-radius: 12px;
+  border: 1px solid #c39e39;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(212, 180, 55, 0.15);
+  position: relative;
+}
+
+
+/* Imagen */
+.perfume-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Etiqueta Superior */
+.tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #d4b447;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Información */
+.info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin: 14px 13px;
+}
+
+
+.perfume-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.perfume-info p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 10px 0 15px;
+  color: #c9c9c9;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 400;
+  color: #eec66d;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Botón */
+.add-btn {
+  background: linear-gradient(to right, #f1dfb6, #d7b447);
+  color: #000;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #f9d97c, #d4af37);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .perfume-card {
+    width: 95%;
+  }
+
+  .perfume-img {
+    height: 280px;
+  }
+
+  .info-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

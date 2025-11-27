@@ -31,7 +31,7 @@ export default function Navbar() {
 
           <li>
             <a
-              href="#inicio"
+              href="./pages/Inicio.jsx"
               className={active === "inicio" ? "active" : ""}
               onClick={() => selectOption("inicio")}
             >

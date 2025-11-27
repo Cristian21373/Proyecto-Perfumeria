@@ -2,6 +2,7 @@
   width: 100%;
   height: 80px;
   padding: 0 40px;
+  border-bottom: 1px solid #2c250f;
 
   display: flex;
   align-items: center;
@@ -14,6 +15,17 @@
   left: 0;
   z-index: 9999; /* 👈 queda encima de todo */
 }
+
+.hero {
+  width: 97.3vw !important;   /* Fuerza ancho total */
+  margin: 0;
+  padding: 0;
+}
+
+.hero-content {
+  padding-right: 60px;
+}
+
 
 .navbar-left {
   display: flex;
