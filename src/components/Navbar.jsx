@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { FiShoppingCart } from "react-icons/fi";
-import { FiMenu, FiX } from "react-icons/fi"; // íconos hamburguesa
+import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const [active, setActive] = useState("inicio");
   const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
+  const current = location.pathname;
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const selectOption = (option) => {
-    setActive(option);
-    setIsOpen(false); // cerrar menú al seleccionar
+  const goTo = (route) => {
+    navigate(route, { replace: true });
+    setIsOpen(false);
   };
 
   return (
     <nav className="navbar">
-      {/* Logo + nombre */}
       <div className="navbar-left">
         <img src="../src/assets/logo.png" alt="Logo" className="navbar-logo" />
         <div className="navbar-title">
@@ -25,54 +27,64 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú normal (PC) */}
       <div className="navbar-center">
         <ul className="navbar-menu">
 
           <li>
-            <a
-              href="./pages/Inicio.jsx"
-              className={active === "inicio" ? "active" : ""}
-              onClick={() => selectOption("inicio")}
+            <Link
+              to="/"
+              className={current === "/" ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault(); 
+                goTo("/");
+              }}
             >
               Inicio
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#catalogo"
-              className={active === "catalogo" ? "active" : ""}
-              onClick={() => selectOption("catalogo")}
+            <Link
+              to="/catalogo"
+              className={current === "/catalogo" ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo("/catalogo");
+              }}
             >
               Catálogo
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#nosotros"
-              className={active === "nosotros" ? "active" : ""}
-              onClick={() => selectOption("nosotros")}
+            <Link
+              to="/nosotros"
+              className={current === "/nosotros" ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo("/nosotros");
+              }}
             >
               Nosotros
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#contacto"
-              className={active === "contacto" ? "active" : ""}
-              onClick={() => selectOption("contacto")}
+            <Link
+              to="/contacto"
+              className={current === "/contacto" ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault();
+                goTo("/contacto");
+              }}
             >
               Contacto
-            </a>
+            </Link>
           </li>
 
         </ul>
       </div>
 
-      {/* Derecha: carrito + menú hamburguesa */}
       <div className="navbar-right">
         <FiShoppingCart className="cart-icon" />
         <button className="hamburger-btn" onClick={toggleMenu}>
@@ -82,10 +94,10 @@ export default function Navbar() {
 
       {/* Menú móvil */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <a onClick={() => selectOption("inicio")} href="#inicio">Inicio</a>
-        <a onClick={() => selectOption("catalogo")} href="#catalogo">Catálogo</a>
-        <a onClick={() => selectOption("nosotros")} href="#nosotros">Nosotros</a>
-        <a onClick={() => selectOption("contacto")} href="#contacto">Contacto</a>
+        <button onClick={() => goTo("/")} className="mobile-link">Inicio</button>
+        <button onClick={() => goTo("/catalogo")} className="mobile-link">Catálogo</button>
+        <button onClick={() => goTo("/nosotros")} className="mobile-link">Nosotros</button>
+        <button onClick={() => goTo("/contacto")} className="mobile-link">Contacto</button>
       </div>
     </nav>
   );

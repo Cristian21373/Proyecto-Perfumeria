@@ -111,6 +111,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 99.9vw !important;
   }
 
   .hero-content {

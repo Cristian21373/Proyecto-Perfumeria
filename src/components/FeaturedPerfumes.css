@@ -1,5 +1,5 @@
 .featured-container {
-  padding: 72px 20px;
+  padding: 75px 20px;
   text-align: center;
   color: #fff;
   background: linear-gradient(to bottom, #000000, #0d0d0d);
@@ -26,9 +26,10 @@
   flex-wrap: wrap;
 }
 
+
 /* Card */
 .perfume-card {
-  width: 450px;                /* 🔥 Más ancho como en tu imagen */
+  width: clamp(280px, 30vw, 450px);   /* 🔥 SUPER RESPONSIVO */
   background: #0c0c0c;
   border-radius: 12px;
   border: 1px solid #c39e39;
@@ -36,7 +37,6 @@
   box-shadow: 0 0 10px rgba(212, 180, 55, 0.15);
   position: relative;
 }
-
 
 /* Imagen */
 .perfume-img {
