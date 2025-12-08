@@ -1,0 +1,98 @@
+.valores-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.valores-title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #f2d48f;
+}
+
+/* --- Tarjetas --- */
+.valores-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.valor-card {
+  background: linear-gradient(to bottom, #111, #000);
+  border: 1px solid rgba(255, 215, 100, 0.3);
+  padding: 25px;
+  width: 260px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 200, 80, 0.05);
+  transition: 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-5px);
+  border-color: #f2d48f;
+}
+
+.valor-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #f9d67a;
+}
+
+.valor-card h3 {
+    color: #f1cf7e;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+
+.valor-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  color: #90a180;
+}
+
+/* --- Imágenes inferiores --- */
+.valores-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.valores-gallery img {
+  width: 330px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 220, 150, 0.25);
+  box-shadow: 0 0 15px rgba(255, 200, 80, 0.05);
+  transition: 0.3s ease;
+}
+
+.valores-gallery img:hover {
+  transform: scale(1.03);
+  border-color: #f2d48f;
+}
+
+.valor-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #f9d67a; /* dorado */
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .valor-card {
+    width: 90%;
+  }
+
+  .valores-gallery img {
+    width: 90%;
+    height: auto;
+  }
+}

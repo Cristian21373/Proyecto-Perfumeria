@@ -10,29 +10,25 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 👉 Mueve el texto a la derecha */
+  justify-content: flex-start;
   padding-right: 37px;
 
-  position: relative; /* 👉 NECESARIO para el overlay */
+  position: relative;
 }
 
-/* 💡 CAPA OSCURA (ESTO OSCURECE LA IMAGEN) */
-/* 💡 CAPA OSCURA CON DEGRADADO DE DERECHA A IZQUIERDA */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.849) 40%,
-    /* 👉 lado derecho más oscuro */ rgba(0, 0, 0, 0.3) 104%,
-    /* 👉 parte intermedia */ rgba(0, 0, 0, 0.356) 100%
-      /* 👉 izquierda sin oscuridad */
+    rgb(255 255 255 / 95%) 36%,
+    rgba(0, 0, 0, 0.3) 192%,
+    rgba(0, 0, 0, 0.356) 72%
   );
   z-index: 1;
 }
 
-/* 💡 EL TEXTO PARA QUE SE MUESTRE ENCIMA DEL OSCURECIDO */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -47,25 +43,19 @@
   font-weight: 400;
   margin-top: -8px;
   margin-bottom: 10px;
-  color: #f4e4c1;
+  color: #101828;
 }
 
 .hero-subtitle {
   font-size: 20px;
   margin-bottom: 25px;
   opacity: 0.9;
-  color: #cabc94;
+  color: #15181c;
 }
 
 .hero-btn {
-  background: linear-gradient(
-    to left,
-    #f1dfb6 0%,
-    /* dorado claro lado izquierdo */ #d7b447 100%,
-    /* dorado más fuerte al centro */ #8a6b23 100%
-      /* más oscuro al lado derecho */
-  );
-  color: black;
+  background: #b8935e;
+  color: #ffffff;
   border: none;
   padding: 14px 26px;
   border-radius: 8px;
@@ -75,20 +65,14 @@
   transition: 0.3s ease;
 }
 
-/* HOVER CON MÁS BRILLO */
 .hero-btn:hover {
-  background: linear-gradient(
-    to left,
-    #f9d97c 0%,
-    /* más dorado claro */ #d4af37 50%,
-    /* dorado brillante */ #b68f2e 100% /* dorado fuerte */
-  );
+  background: #96784f;
   transform: scale(1.05);
 }
 
 .hero-spam {
   display: inline-block;
-  background: transparent;
+  background: #faf7fd;
   color: #d4b447;
   padding: 14px 18px;
   font-size: 14px;
@@ -97,13 +81,12 @@
   letter-spacing: 1px;
   margin-bottom: 22px;
   text-transform: uppercase;
-  border: 0.1px solid #4d3d25;
+  border: 0.1px solid #ebded0;
   backdrop-filter: blur(3px);
   position: relative;
   z-index: 2;
 }
 
-/* 📱 RESPONSIVE */
 /* 📱 RESPONSIVE */
 @media (max-width: 768px) {
   .hero {
@@ -117,10 +100,10 @@
   .hero-content {
     margin-left: 18%;
     max-width: 90%;
-    text-align: center; /* 📌 centra el texto */
-    display: flex; /* 📌 truco para centrar */
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* 📌 centra TODO horizontalmente */
+    align-items: center;
   }
 
   .hero-title {

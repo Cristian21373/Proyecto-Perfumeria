@@ -1,6 +1,6 @@
 .services-container {
   padding: 80px 20px;
-  background: #000;
+  background: #fefefe;
   display: flex;
   justify-content: center;
 }
@@ -16,9 +16,9 @@
 .service-card {
   width: 380px;
   padding: 40px 30px;
-  background: linear-gradient(145deg, #0c0c0c, #050505);
+  background: #ffffff;
   border-radius: 16px;
-  border: 1px solid rgba(212, 180, 55, 0.5);
+  border: 1px solid rgb(224 226 229);
   text-align: center;
   transition: 0.3s ease;
 }
@@ -27,13 +27,12 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: radial-gradient(circle, #e9d08b, #d4b447);
+  background: radial-gradient(circle, #bb9561, #ba945f);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 20px auto;
 }
-
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(212, 180, 55, 0.3);
@@ -47,12 +46,12 @@
 }
 
 .service-desc {
-  color: #a0a06d;
+  color: #000000;
   font-size: 15px;
   line-height: 1.5;
 }
 
-/* 📱 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .service-card {
     width: 100%;

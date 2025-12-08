@@ -1,8 +1,8 @@
 .featured-container {
   padding: 75px 20px;
   text-align: center;
-  color: #fff;
-  background: linear-gradient(to bottom, #000000, #0d0d0d);
+  color: #000000;
+  background: #fdfdfe;
 }
 
 .featured-title {
@@ -22,22 +22,20 @@
 .featured-grid {
   display: flex;
   justify-content: center;
-  gap: 45px;
+  gap: 29px;
   flex-wrap: wrap;
 }
 
-
 /* Card */
 .perfume-card {
-  width: clamp(280px, 30vw, 450px);   /* 🔥 SUPER RESPONSIVO */
-  background: #0c0c0c;
+  width: clamp(280px, 30vw, 450px);
+  background: #ffffff;
   border-radius: 12px;
-  border: 1px solid #c39e39;
+  border: 1px solid #e5e7eb;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(212, 180, 55, 0.15);
   position: relative;
 }
-
 /* Imagen */
 .perfume-img {
   width: 100%;
@@ -50,12 +48,12 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #d4b447;
-  color: #000;
+  background: #c39b69;
+  color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Información */
@@ -63,47 +61,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-  margin: 14px 13px;
+  margin: 14px 29px;
 }
-
 
 .perfume-info h3 {
   margin: 0;
+  font-weight: 400;
   font-size: 18px;
-  color: #fff;
+  color: #101851;
+  text-align: left;
+  padding: 10px 30px;
+  padding-bottom: 0px;
 }
 
 .perfume-info p {
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.8;
-  margin: 10px 0 15px;
-  color: #c9c9c9;
+  margin: 10px 16px;
+  color: #000000;
+  text-align: justify;
+  padding: 11px;
+  padding-top: 0px;
 }
 
 .price {
   font-size: 18px;
   font-weight: 400;
-  color: #eec66d;
+  color: #c39b69;
   display: block;
   margin-bottom: 15px;
 }
 
 /* Botón */
 .add-btn {
-  background: linear-gradient(to right, #f1dfb6, #d7b447);
-  color: #000;
+  background: #bb9561;
+  color: #ffffff;
   border: none;
   padding: 10px 22px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.3s;
 }
 
 .add-btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #f9d97c, #d4af37);
+  background: #755e3d;
 }
 
 /* 📱 Responsive */

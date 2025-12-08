@@ -2,22 +2,19 @@
   width: 100%;
   height: 80px;
   padding: 0 40px;
-  border-bottom: 1px solid #2c250f;
-
+  border-bottom: 1px solid #f3eae2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: #000000;
-
-  position: fixed; /* 👈 siempre arriba */
+  background: #fdfdff;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999; /* 👈 queda encima de todo */
+  z-index: 9999;
 }
 
 .hero {
-  width: 97.3vw !important;   /* Fuerza ancho total */
+  width: 97.3vw !important;
   margin: 0;
   padding: 0;
 }
@@ -26,19 +23,18 @@
   padding-right: 60px;
 }
 
-
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 2; /* que el logo quede por encima del centro si se solapan */
+  z-index: 2; 
 }
 
 .navbar-center {
   position: absolute;
   left: 50%;
-  top: 50%; /* 👈 centrado vertical */
-  transform: translate(-50%, -50%); /* 👈 ajusta vertical y horizontal */
+  top: 50%; 
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,21 +53,20 @@
 
 .navbar-title {
   display: flex;
-  flex-direction: column; /* coloca Parfum debajo */
-  line-height: 18px; /* junta un poquito las dos líneas */
+  flex-direction: column; 
+  line-height: 18px; 
 }
 
 .title-main {
-  color: #d4af37; /* amarillo dorado */
+  color: #d4af37;
   font-size: 17px;
 }
 
 .title-sub {
-  color: #ffffff;
+  color: #000000;
   font-size: 15px;
   margin-top: 0px;
 }
-
 .navbar-menu {
   display: flex;
   gap: 56px;
@@ -83,10 +78,10 @@
 .navbar-menu a {
   display: inline-block;
   text-decoration: none;
-  color: #f4e4c1;
+  color: #000000;
   font-size: 16px;
   font-weight: 400;
-  transition: transform 0.2s ease, color 0.2s ease; /* 👈 transición suave */
+  transition: transform 0.2s ease, color 0.2s ease;
   position: relative;
 }
 
@@ -103,33 +98,64 @@
 }
 
 .navbar-menu a.active {
-  color: #d4af37; /* mismo color dorado que la línea */
-  transform: scale(1.1); /* mismo efecto del hover */
+  color: #d4af37;
+  transform: scale(1.1);
 }
 
-/* ACTIVO: la línea queda fija */
 .navbar-menu a.active::after {
   width: 100%;
 }
 
 .navbar-menu a:hover {
   color: #d4af37;
-  transform: scale(1.1); /* 👈 agranda un poquito (10%) */
+  transform: scale(1.1);
 }
 
 .navbar-right {
-  width: 111px; /* mismo tamaño que el logo para balancear */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: flex-end;
+  margin-right: 68px;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background-color: transparent;
+  border: 1px solid #dcdcdc; 
+  border-radius: 8px;
+  padding: 8px 16px; 
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #333; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  border-color: #d4af37; 
+  color: #d4af37;
+}
+
+/* Ajuste para el ícono dentro del botón */
+.login-icon {
+  font-size: 18px;
 }
 
 .cart-icon {
   font-size: 23px;
-  color: #f4e4c1;
+  color: #000000;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .cart-icon:hover {
-  color: #d4af37; /* dorado */
+  color: #d4af37; 
   transform: scale(1.15);
 }
 
@@ -137,7 +163,7 @@
   background: none;
   border: none;
   font-size: 26px;
-  color: #f4e4c1;
+  color: #fdd376;
   cursor: pointer;
   display: none;
 }
@@ -149,35 +175,43 @@
   width: 100%;
   height: 0;
   overflow: hidden;
-
-  background: #000;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 0 30px;
-
+  padding: 0 10px; 
+  box-sizing: border-box;
   transition: height 0.3s ease;
   z-index: 9998;
 }
 
 .mobile-menu.open {
-  height: 250px; /* 👈 Puedes ajustarlo */
-  padding-top: 30px;
+  height: 293px;
+  padding-top: 31px;
 }
 
 .mobile-menu a {
-  color: #f4e4c1;
+  color: #000000;
   font-size: 16px;
   text-decoration: none;
+
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 14px 0; 
+
+  background: #000000; 
+  border-radius: 8px;
 }
 
 /* 📱 Estilos para celular */
-@media (max-width: 768px) {
+@media (max-width: 972px) {
   .navbar {
     padding: 0 12px;
   }
 
-  /* 🔥 Forzamos a que el menú central desaparezca */
   .navbar-center {
     display: none !important;
     position: static !important;
@@ -186,17 +220,19 @@
     top: auto !important;
   }
 
-  /* 🔥 Mostramos la hamburguesa */
   .hamburger-btn {
     display: block;
   }
 
-  /* 🔥 Acomodamos la parte derecha */
   .navbar-right {
     width: auto;
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: flex-end;
+  }
+
+  .login-btn {
+    display: none;
   }
 }

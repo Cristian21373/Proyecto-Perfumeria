@@ -6,8 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const location = useLocation(); 
-  const navigate = useNavigate(); 
+  const location = useLocation();
+  const navigate = useNavigate();
   const current = location.pathname;
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -29,13 +29,12 @@ export default function Navbar() {
 
       <div className="navbar-center">
         <ul className="navbar-menu">
-
           <li>
             <Link
               to="/"
               className={current === "/" ? "active" : ""}
               onClick={(e) => {
-                e.preventDefault(); 
+                e.preventDefault();
                 goTo("/");
               }}
             >
@@ -81,23 +80,51 @@ export default function Navbar() {
               Contacto
             </Link>
           </li>
-
         </ul>
       </div>
 
       <div className="navbar-right">
         <FiShoppingCart className="cart-icon" />
+
+        <button className="login-btn" onClick={() => goTo("/inicio-sesion")}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="login-icon"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+
+          <span>Iniciar Sesión</span>
+        </button>
+
         <button className="hamburger-btn" onClick={toggleMenu}>
-          {isOpen ? <FiX /> : <FiMenu />}
+          ☰
         </button>
       </div>
 
       {/* Menú móvil */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <button onClick={() => goTo("/")} className="mobile-link">Inicio</button>
-        <button onClick={() => goTo("/catalogo")} className="mobile-link">Catálogo</button>
-        <button onClick={() => goTo("/nosotros")} className="mobile-link">Nosotros</button>
-        <button onClick={() => goTo("/contacto")} className="mobile-link">Contacto</button>
+        <button onClick={() => goTo("/")} className="mobile-link">
+          Inicio
+        </button>
+        <button onClick={() => goTo("/catalogo")} className="mobile-link">
+          Catálogo
+        </button>
+        <button onClick={() => goTo("/nosotros")} className="mobile-link">
+          Nosotros
+        </button>
+        <button onClick={() => goTo("/contacto")} className="mobile-link">
+          Contacto
+        </button>
       </div>
     </nav>
   );
