@@ -1,15 +1,14 @@
 .valores-section {
   padding: 50px 20px;
   text-align: center;
-  background: black;
-  color: white;
+  background: rgb(255, 255, 255);
 }
 
 .valores-title {
   font-size: 2.3rem;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #f2d48f;
+  color: #313131;
 }
 
 /* --- Tarjetas --- */
@@ -22,37 +21,42 @@
 }
 
 .valor-card {
-  background: linear-gradient(to bottom, #111, #000);
-  border: 1px solid rgba(255, 215, 100, 0.3);
+  display: flex;
+  background: white;
+  border: 1px solid rgb(161 161 161 / 30%);
   padding: 25px;
   width: 260px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(255, 200, 80, 0.05);
   transition: 0.3s ease;
+  flex-direction: column;
+  align-items: center;
 }
 
 .valor-card:hover {
   transform: translateY(-5px);
-  border-color: #f2d48f;
+  border-color: rgb(214, 182, 40);
 }
 
 .valor-icon {
-  font-size: 40px;
-  margin-bottom: 15px;
-  color: #f9d67a;
+  font-size: 45px;
+  color: #ffffff;
+  border-radius: 42px;
+  width: 26%;
+  padding: 7px;
+  background-color: #bd9763;
 }
 
 .valor-card h3 {
-    color: #f1cf7e;
-    margin-bottom: 10px;
-    font-weight: 400;
+  color: #f1cf7e;
+  margin-bottom: 10px;
+  font-weight: 400;
 }
-
 
 .valor-card p {
   font-size: 0.95rem;
   opacity: 0.9;
-  color: #90a180;
+  color: #393939;
 }
 
 /* --- Imágenes inferiores --- */
@@ -68,22 +72,15 @@
   height: 330px;
   object-fit: cover;
   border-radius: 10px;
-  border: 1px solid rgba(255, 220, 150, 0.25);
+  border: 1px solid rgb(155 155 155 / 15%);
   box-shadow: 0 0 15px rgba(255, 200, 80, 0.05);
   transition: 0.3s ease;
 }
 
 .valores-gallery img:hover {
   transform: scale(1.03);
-  border-color: #f2d48f;
+  border-color: #c49425;
 }
-
-.valor-icon {
-  font-size: 45px;
-  margin-bottom: 15px;
-  color: #f9d67a; /* dorado */
-}
-
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

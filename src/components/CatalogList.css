@@ -14,11 +14,11 @@
 .catalog-header h1 {
   font-size: 40px;
   font-weight: 400;
-  color: #f4e4c1;
+  color: #000000;
 }
 
 .catalog-header p {
-  color: #aba087;
+  color: #242424;
   font-size: 18px;
   margin-top: 10px;
 }
@@ -26,7 +26,7 @@
 .header-line {
   width: 80px;
   height: 4px;
-  background-color: #f7cc57;
+  background-color: #bb9b42;
   margin: 15px auto 0;
   border-radius: 4px;
 }
@@ -34,7 +34,7 @@
 /* --- GRID DEL CATÁLOGO --- */
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 35px;
   width: 75%;
   margin: 0 auto;
@@ -42,18 +42,18 @@
 
 /* --- TARJETA DEL PRODUCTO --- */
 .catalog-card {
-  background-color: #0d0d0d;
-  border: 1px solid #413612;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 15px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease; 
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .catalog-card:hover {
-  transform: translateY(-8px); 
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45); 
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
   border: 1px solid #d4af37;
 }
 
@@ -61,11 +61,11 @@
   width: 100%;
   height: 280px;
   object-fit: cover;
-  transition: transform 0.4s ease; 
+  transition: transform 0.4s ease;
 }
 
 .catalog-card:hover .product-img {
-  transform: scale(1.08); 
+  transform: scale(1.08);
 }
 
 .card-content {
@@ -76,14 +76,14 @@
 }
 
 .card-content h3 {
-  color: #f4e4c1;
+  color: #070707;
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 
 .description {
-  color: #8b8b61;
+  color: #474747;
   font-size: 14px;
   line-height: 1.4;
 }
@@ -91,13 +91,13 @@
 .price {
   font-size: 20px;
   font-weight: 400;
-  color: #f7cc57;
+  color: #d8a518;
 }
 
 /* --- BOTONES --- */
 .btn-add {
-  background: linear-gradient(90deg, #d6b242, #f2e1b9);
-  color: #000;
+  background: #c49c69;
+  color: #f3f3f3;
   padding: 9px;
   border-radius: 8px;
   border: none;
@@ -111,15 +111,15 @@
 }
 
 .btn-add:hover {
-  transform: translateY(-4px); 
-  box-shadow: 0 8px 18px rgba(247, 204, 87, 0.45); 
-  background: linear-gradient(90deg, #c6a53a, #ffe07a);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(247, 204, 87, 0.45);
+  background: #e2bf92;
 }
 
 .btn-desc {
   background: transparent;
-  border: 1px solid #746226;
-  color: #f7cc57;
+  border: 1px solid #c09967;
+  color: #c58d45;
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;

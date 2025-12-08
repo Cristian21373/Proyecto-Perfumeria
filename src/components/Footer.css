@@ -40,14 +40,14 @@
   margin: 0;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #ffeabb;
+  color: #000000;
 }
 
 .footer-desc {
   margin: 15px 0;
   width: 75%;
   line-height: 1.5;
-  color: #aba087;
+  color: #1e1e1e;
   font-size: 15px;
 }
 
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #aba087;
+  color: #161616;
 }
 
 .footer-icon {
@@ -65,7 +65,7 @@
 
 /* ENLACES */
 .footer-title {
-  color: #d4b447;
+  color: #b79d43;
   margin-bottom: 12px;
   font-size: 16px;
   font-weight: 400;
@@ -82,6 +82,7 @@
   cursor: pointer;
   transition: 0.2s;
   font-size: 15px;
+  color: #1e1e1e;
 }
 
 .footer-links li:hover {
@@ -115,12 +116,12 @@
 
 /* LÍNEA SEPARADORA */
 .footer-line-up {
-  border-color: #2a230b;
+  border-color: #c49c69;
   margin: 56px 10px;
 }
 
 .footer-line {
-  border-color: #2a230b;
+  border-color: #c49c69;
   margin: 15px 139px;
 }
 
@@ -128,7 +129,7 @@
 .footer-copy {
   text-align: center;
   font-size: 14px;
-  color: #888;
+  color: #252525;
 }
 
 /* RESPONSIVE */

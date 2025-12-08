@@ -230,6 +230,7 @@
     align-items: center;
     gap: 20px;
     justify-content: flex-end;
+    margin-right: 0px;
   }
 
   .login-btn {

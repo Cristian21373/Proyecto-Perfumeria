@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function Catalogo() {
   return (
-    <div style={{backgroundColor: "black"}}>
+    <div>
       <Navbar />
       <CatalogList />
       <Footer />
