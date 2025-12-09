@@ -14,3 +14,23 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+
+src/
+├── admin/                    # Todo el panel de administración
+│   ├── components/          # Componentes específicos del admin
+│   ├── pages/              # Páginas del admin
+│   └── styles/             # Estilos del admin
+├── client/                  # Sitio web público (cliente)
+│   ├── components/         # Componentes del cliente
+│   ├── pages/             # Páginas del cliente
+│   └── styles/            # Estilos del cliente
+├── shared/                 # Recursos compartidos
+│   ├── services/          # API services (autenticación, productos)
+│   ├── hooks/            # Hooks personalizados
+│   ├── context/          # Contextos de React
+│   └── utils/            # Utilidades
+└── App.jsx               # Aplicación principal

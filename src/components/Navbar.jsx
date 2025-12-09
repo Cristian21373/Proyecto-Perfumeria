@@ -1,20 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
+import { FiShoppingCart, FiMenu, FiX, FiUser } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
   const current = location.pathname;
+
+  useEffect(() => {
+    // Verificar si el administrador está logueado
+    const token = localStorage.getItem("adminToken");
+    const userData = localStorage.getItem("adminUser");
+    
+    if (token && userData) {
+      setIsAdminLoggedIn(true);
+    }
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const goTo = (route) => {
-    navigate(route, { replace: true });
+    navigate(route);
     setIsOpen(false);
+  };
+
+  const handleAdminLogin = () => {
+    navigate("/admin/login");
+    setIsOpen(false);
+  };
+
+  const handleAdminDashboard = () => {
+    navigate("/admin/dashboard");
+    setIsOpen(false);
+  };
+
+  const handleAdminLogout = () => {
+    localStorage.removeItem("adminToken");
+    localStorage.removeItem("adminUser");
+    setIsAdminLoggedIn(false);
+    navigate("/");
   };
 
   return (
@@ -85,6 +112,27 @@ export default function Navbar() {
 
       <div className="navbar-right">
         <FiShoppingCart className="cart-icon" />
+        
+        {isAdminLoggedIn ? (
+          <div className="admin-controls">
+            <button 
+              onClick={handleAdminDashboard}
+              className="btn-admin-dashboard"
+            >
+              <FiUser className="admin-icon" />
+              <span>Admin</span>
+            </button>
+          </div>
+        ) : (
+          <button 
+            onClick={handleAdminLogin}
+            className="btn-admin-login"
+          >
+            <FiUser className="admin-icon" />
+            <span>Admin</span>
+          </button>
+        )}
+        
 
         <button className="login-btn" onClick={() => goTo("/inicio-sesion")}>
           <svg
