@@ -99,10 +99,8 @@ const Categorias = () => {
     };
 
     const handleEdit = (categoria) => {
-        // Navegar a formulario de edición
         navigate(`/admin/categorias/editar/${categoria.id}`);
     };
-
 
     const handleCreate = () => {
         navigate('/admin/categorias/nueva');
