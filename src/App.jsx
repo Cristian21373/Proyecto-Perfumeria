@@ -10,7 +10,9 @@ import Dashboard from "./admin/pages/Dashboard";
 import Productos from "./admin/pages/Productos";
 import Categorias from "./admin/pages/Categorias";
 import NuevaCategoria from "./admin/pages/NuevaCategoria";
+import EditarCategoria from "./admin/pages/EditarCategoria";
 import InicioSesion from "./pages/InicioSesion";
+
 
 function App() {
   return (
@@ -45,6 +47,11 @@ function App() {
           <Route path="/admin/categorias/nueva" element={
             <PrivateRoute>
               <NuevaCategoria />
+            </PrivateRoute>
+          } />
+          <Route path="/admin/categorias/editar/:id" element={
+            <PrivateRoute>
+              <EditarCategoria />
             </PrivateRoute>
           } />
         </Routes>
